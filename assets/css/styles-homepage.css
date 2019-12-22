@@ -1,0 +1,40 @@
+
+.slider {
+  background: transparent;
+  height: 100%;
+  width: 50px;
+  position: absolute;
+  top: 0;
+  transition: .75s all;
+}
+
+.slider.slider-right {
+  right: 15px;
+}
+
+.slider.slider-left {
+  left: 15px;
+}
+
+.slider:hover {
+  background: #969696;
+}
+
+.gambarSlider {
+  max-height: 400px;
+  box-shadow: 10px 10px 40px #7e7474;
+  max-width: 400px;
+  margin-top: auto;
+}
+
+.boxslider {
+}
+
+#tombolSlider {
+  top: 50%;
+  position: absolute;
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+  left: 15px;
+}

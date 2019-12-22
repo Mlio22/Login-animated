@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: inherit;
+    animation-name: latarBelakang;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    transition-duration: .5s;
+    transition-property: all;
+    animation-play-state: running;
+}
+
+.heading {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.heading p {
+    font-size: 14px;
+    color: transparent;
+    transition: 1s all;
+}
+
+p.checking {
+    animation: checking 5s infinite;
+}
+
+p.success {
+    color: green !important;
+}
+
+p.failed {
+    color: red !important;
+}
+
+.login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 330px;
+    background: rgba(0, 0, 0, .8);
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px rgba(18, 15, 15, 0.8);
+}
+
+.input-box {
+    position: relative;
+}
+
+.login-box .input-box input,
+.login-box .input-box input:required,
+.login-box .input-box input:required:invalid,
+.login-box .input-box input:-moz-ui-invalid,
+.login-box .input-box input:-moz-ui-valid {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: white;
+    margin-bottom: 30px;
+    border: transparent;
+    border-bottom: 1px solid #4b54d4d0;
+    background-color: transparent;
+}
+
+label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: white;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.bottom,
+.bottom:valid {
+    font-size: 12px;
+    color: transparent;
+    top: 36px;
+    left: 0;
+}
+
+input:focus~.top,
+input:valid~.top {
+    top: -18px;
+    left: 0;
+    color: #4b54d4d0;
+    font-size: 12px;
+}
+
+.bottom.show {
+    color: red;
+}
+
+.bottom:invalid,
+.bottom:required {
+    border: transparent;
+}
+
+.submit-box {
+    margin-top: 10px;
+    position: relative;
+}
+
+input[type="submit"] {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+a {
+    margin: 10px;
+    color: white;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+
+/** animasi */
+
+@keyframes latarBelakang {
+    0% {
+        background-color: rgba(231, 97, 97, 0.719);
+    }
+    25% {
+        background-color: rgba(250, 250, 90, 0.877);
+    }
+    50% {
+        background-color: rgba(104, 245, 76, 0.897);
+    }
+    75% {
+        background-color: rgba(62, 115, 185, 0.808);
+    }
+    100% {
+        background-color: rgba(231, 97, 97, 0.719);
+    }
+}
+
+@keyframes checking {
+    0% {
+        color: blue;
+    }
+    25% {
+        color: orange;
+    }
+    50% {
+        color: yellow;
+    }
+    75% {
+        color: red;
+    }
+    100% {
+        color: blue;
+    }
+}
