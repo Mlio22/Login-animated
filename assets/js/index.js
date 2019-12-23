@@ -27,25 +27,28 @@ $(document).ready(function() {
             $('label.bottom').removeClass('show');
         }
         if ($("input[type='text']").val() == 'ip22' && $("input[type='password']").val() == 'awokowa') {
-            var awokwoa = setInterval(function() {
-                var awokwoa1 = setInterval(function() {
-                    var awokowa2 = setInterval(function() {
+            var awokwoa = setTimeout(function() {
+                var awokwoa1 = setTimeout(function() {
+                    var awokowa2 = setTimeout(function() {
                         $('body').css("animation-name", 'latarBelakang');
+                        $('.transition').css('animation-name', 'none');
+                        $('.transition').css('left', $('.transition').css('0%'));
+                        window.location.assign('index2.html')
                         $('input[type="submit"]').attr('disabled', false);
-                        clearInterval(awokowa2);
-                    }, 500);
-
+                    }, 998);
+                    $('.transition').css('animation-name', 'transform');
                     $('body').css("background-color", $('body').css('background-color'));
-                    clearInterval(awokwoa1);
-                }, 3000);
-                $('body').css('background-color', 'rgba(53, 53, 240, 0.897)');
+                }, 2000);
+                $('body').css('background-color', '#008000');
                 $('.heading p').removeClass('checking');
                 $('.heading p').html('Login Berhasil');
                 $('.heading p').addClass('success');
-                clearInterval(awokwoa);
             }, 2000);
             if ($('.heading p').hasClass('failed')) {
                 $('.heading p').removeClass('failed');
+            }
+            if ($('.heading p').hasClass('success')) {
+                $('.heading p').removeClass('success');
             }
 
         } else if (!$("input[type='text']").val() == '' || $("input[type='password']").val() == '') {
@@ -69,6 +72,9 @@ $(document).ready(function() {
                 clearInterval(awokwoa);
 
             }, 2000);
+            if ($('.heading p').hasClass('failed')) {
+                $('.heading p').removeClass('failed');
+            }
             if ($('.heading p').hasClass('success')) {
                 $('.heading p').removeClass('success');
             }

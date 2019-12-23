@@ -9,6 +9,7 @@ body {
     transition-duration: .5s;
     transition-property: all;
     animation-play-state: running;
+    overflow: hidden;
 }
 
 .heading {
@@ -18,9 +19,10 @@ body {
 }
 
 .heading p {
-    font-size: 14px;
+    font-size: 0px;
     color: transparent;
     transition: 1s all;
+    height: 0%;
 }
 
 p.checking {
@@ -28,10 +30,12 @@ p.checking {
 }
 
 p.success {
-    color: green !important;
+    color: #008000 !important;
+    font-size: 14px;
 }
 
 p.failed {
+    font-size: 14px;
     color: red !important;
 }
 
@@ -47,6 +51,8 @@ p.failed {
     box-sizing: border-box;
     border-radius: 10px;
     box-shadow: 10px 10px 20px rgba(18, 15, 15, 0.8);
+    animation-duration: 1s;
+    animation-iteration-count: 1;
 }
 
 .input-box {
@@ -127,6 +133,17 @@ a:hover {
     color: white;
 }
 
+.transition {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 100%;
+    top: 0px;
+    background-color: rgb(80, 80, 80);
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
 
 /** animasi */
 
@@ -150,7 +167,11 @@ a:hover {
 
 @keyframes checking {
     0% {
+        font-size: 0px;
         color: blue;
+    }
+    5% {
+        font-size: 14px;
     }
     25% {
         color: orange;
@@ -162,6 +183,20 @@ a:hover {
         color: red;
     }
     100% {
+        font-size: 14px;
         color: blue;
+    }
+}
+
+@keyframes transform {
+    0% {
+        left: 100%;
+    }
+    75% {
+        left: 0%;
+    }
+    100% {
+        left: 0%;
+        display: none;
     }
 }
